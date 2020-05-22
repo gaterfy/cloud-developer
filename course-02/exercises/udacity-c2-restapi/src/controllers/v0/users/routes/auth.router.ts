@@ -11,7 +11,6 @@ import * as EmailValidator from 'email-validator';
 const router: Router = Router();
 
 async function generatePassword(plainTextPassword: string): Promise<string> {
-    //@TODO Use Bcrypt to Generated Salted Hashed Passwords
     const rounds = 10;
     const salt = await bcrypt.genSalt(rounds);
     const hash = await bcrypt.hash(plainTextPassword, salt);
@@ -19,7 +18,6 @@ async function generatePassword(plainTextPassword: string): Promise<string> {
 }
 
 async function comparePasswords(plainTextPassword: string, hash: string): Promise<boolean> {
-    //@TODO Use Bcrypt to Compare your password to your Salted Hashed Password
     let passwordCompare = await bcrypt.compare(plainTextPassword, hash);
     return passwordCompare;
 }
