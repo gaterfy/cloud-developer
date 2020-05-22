@@ -8,7 +8,7 @@ export const config = {
     "aws_region": process.env.DEV_AWS_REGION,
     "aws_profile": process.env.DEV_AWS_PROFILE,
     "aws_media_bucket": process.env.DEV_AWS_MEDIA_BUCKET,
-    "jwt": "hello World"
+    "jwt": process.env.DEV_JWT_SECRET
   },
   "prod": {
     "username": "",
